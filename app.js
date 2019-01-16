@@ -36,7 +36,7 @@ passport.use(new LocalStrategy({
   usernameField: "username",
   passwordField: "password",
   passReqToCallback: true,
-  session: false,
+  session: true,
 }, function(req, username, password, done){
   process.nextTick(function(){
     if(username === "test" && password === "test"){
