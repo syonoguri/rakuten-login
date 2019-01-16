@@ -11,6 +11,13 @@ var LocalStrategy = require("passport-local").Strategy;
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var session = require("express-session");
+var mysql = require("/usr/local/lib/node_modules/mysql");
+var connection = mysql.createConnection({
+    host:"localhost",
+    database:"rakutenapplication",
+    user:"dbuser",
+    password:"gladcubeogr"
+});
 
 // 追記ここまで
 
@@ -41,16 +48,25 @@ passport.use(new LocalStrategy({
   session: true,
 }, function(req, username, password, done){
   process.nextTick(function(){
-    if(username === "test" && password === "test"){
-      console.log("login!");
-      return done(null,username)
-    } else {
-      console.log("login error")
-      return done(null, false, {message: "パスワードが正しくありません"})
-    }
-  })
+    console.log("nowlogining")
+    connection.query("select * from login;",function(err,users){
+      if(err) {return done(err);}
+      for(i=0; i<users.length; i++){
+        if(users[i].name == username && users[i].password == password){
+          console.log("success!");
+          return done(null, username);
+        }
+      }
+      return done(null, false, {message:"invalid"});
+    // if(username === "test" && password === "test"){
+    //   console.log("login!");
+    //   return done(null,username)
+    // } else {
+    //   console.log("login error")
+    //   return done(null, false, {message: "パスワードが正しくありません"})
+    })
+  });
 }));
-
 passport.serializeUser(function(user,done){
   console.log("serializeUser");
   done(null,user);
