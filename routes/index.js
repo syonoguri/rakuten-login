@@ -31,8 +31,8 @@ router.post("/login", passport.authenticate("local",
   session: true}));
 
 router.post("/signUp", function(req,res){
-  console.log(req);
-  connection.query("insert into login", {name: req.body.username, password: req.body.password}, function(error, response){
+  console.log(req.body.username);
+  connection.query("insert into login set ?", {name: req.body.username, password: req.body.password}, function(error, response){
     console.log("mysqling")
     if(error) throw error;
     console.log(response);
