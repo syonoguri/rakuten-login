@@ -3,8 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var http = require("http")
+// appclientから追記したもの１
 
-// app.jsから追記したもの
+
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+// appclient追記ここまで
+
+// app.jsから追記したもの(ログイン実装時１)
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
@@ -19,7 +30,7 @@ var connection = mysql.createConnection({
     password:"gladcubeogr"
 });
 
-// 追記ここまで
+// 追記ここまで（ログイン実装時１）
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -36,7 +47,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.jsから追記したもの
+// app.jsから追記したもの（ログイン実装時２）
 app.use(session({ resave:false, saveUninitialized:false, secret: "passport login"}));
 
 app.use(passport.initialize());
@@ -76,7 +87,7 @@ passport.deserializeUser(function(user,done){
   console.log("deserializeUser");
   done(null,user);
 });
-// 追記ここまで
+// 追記ここまで（ログイン実装時２）
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -98,3 +109,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+var server = http.createServer(app);
+server.listen(3000);
