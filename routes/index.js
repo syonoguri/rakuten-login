@@ -8,7 +8,7 @@ var passport = require("passport");
 /* GET home page. */
 router.get('/', function(req, res, next) {
   console.log(req.user)
-  res.render('index', { user: req.user });
+  res.render('index', { user : req.user });
 });
 
 // 追記
@@ -20,6 +20,11 @@ router.post("/login", passport.authenticate("local",
   {successRedirect: "/",
   failureRedirect: "/login",
   session: true}));
+
+router.post("/signUp", function(req,res){
+  console.log(req);
+  
+});
 
 router.get("/logout", function(req,res){
   req.logout();
