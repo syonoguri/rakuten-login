@@ -2,6 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 // 追記
+var mysql = require("/usr/local/lib/node_modules/mysql");
+var connection = mysql.createConnection({
+    host:"localhost",
+    database:"rakutenapplication",
+    user:"dbuser",
+    password:"gladcubeogr"
+});
 var passport = require("passport");
 // ここまで
 
