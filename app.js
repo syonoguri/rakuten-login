@@ -40,6 +40,7 @@ passport.use(new LocalStrategy({
 }, function(req, username, password, done){
   process.nextTick(function(){
     if(username === "test" && password === "test"){
+      console.log("login!");
       return done(null,username)
     } else {
       console.log("login error")
@@ -49,10 +50,12 @@ passport.use(new LocalStrategy({
 }));
 
 passport.serializeUser(function(user,done){
+  console.log("serializeUser")
   done(null,user);
 });
 
 passport.deserializeUser(function(user,done){
+  console.log("deserializeUser")
   done(null,user);
 });
 // 追記ここまで
