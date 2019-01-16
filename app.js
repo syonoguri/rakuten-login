@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.jsから追記したもの
 app.use(passport.initialize());
-passport.use(new. LocalStrategy({
+passport.use(new LocalStrategy({
   usernameField: "username",
   passwordField: "password",
   passReqToCallback: true,
