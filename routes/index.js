@@ -30,7 +30,7 @@ router.post("/login", passport.authenticate("local",
 
 router.post("/signUp", function(req,res){
   console.log(req);
-  connection.query("insert into login", {name: req.username, password: req.password}, function(error, response){
+  connection.query("insert into login;", {name: req.username, password: req.password}, function(error, response){
     if(error) throw error;
     console.log(response);
     res.render("login", {user:req.user});
