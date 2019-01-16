@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.jsから追記したもの
 app.use(passport.initialize());
+app.use(passport.session());
 passport.use(new LocalStrategy({
   usernameField: "username",
   passwordField: "password",
@@ -46,6 +47,14 @@ passport.use(new LocalStrategy({
     }
   })
 }));
+
+passport.serializeUser(function(user,done){
+  done(null,user);
+});
+
+passport.deserializeUser(function(user,done){
+  done(null,user);
+});
 // 追記ここまで
 
 app.use('/', indexRouter);
