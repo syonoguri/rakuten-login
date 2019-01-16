@@ -30,6 +30,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.jsから追記したもの
+app.use(session({ resave:false, saveUninitialized:false, secret: "passport login"}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy({
@@ -50,12 +52,12 @@ passport.use(new LocalStrategy({
 }));
 
 passport.serializeUser(function(user,done){
-  console.log("serializeUser")
+  console.log("serializeUser");
   done(null,user);
 });
 
 passport.deserializeUser(function(user,done){
-  console.log("deserializeUser")
+  console.log("deserializeUser");
   done(null,user);
 });
 // 追記ここまで
