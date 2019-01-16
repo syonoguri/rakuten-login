@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var domain = require('express-domain-middleware');
+router.use(domain);
 
 // 追記
 var mysql = require("/usr/local/lib/node_modules/mysql");
