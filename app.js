@@ -48,7 +48,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
 
 // app.jsから追記したもの（ログイン実装時２）
 app.use(session({ resave:false, saveUninitialized:false, secret: "passport login"}));
