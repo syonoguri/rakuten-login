@@ -5,9 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var http = require("http")
 // appclientから追記したもの１
-var request = require("request")
-var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: false }));
+
+
+
 
 
 
@@ -34,6 +34,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
