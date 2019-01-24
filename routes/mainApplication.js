@@ -13,8 +13,8 @@ console.log("mainapplication!!")
 
 router.get('/', function(req, res, next) {
     console.log(req.user)
-    if(!req.user) res.render("index");
-    res.redirect("/");
+    if(!req.user) res.redirect("/");
+    res.render('application', { user : req.user });
   });
 
 app.use(function(req, res, next) {
