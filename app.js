@@ -84,9 +84,10 @@ passport.deserializeUser(function(user,done){
 });
 // 追記ここまで（ログイン実装時２）
 
+app.use("/mainApplication", mainApplicationRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/mainApplication", mainApplicationRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
