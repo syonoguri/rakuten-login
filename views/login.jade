@@ -7,10 +7,10 @@ block content
     br
   #form-container
     form(role='form', action="/login",method="post", style='max-width: 300px;')
-        input.form-control(type='text', name="username", placeholder='Enter Username')
-        input.form-control(type='password', name="password", placeholder='Password')
-      button.beautifulButton(type='submit') SignIn
-      a(href='/')
+      input.form-control(type='text', name="username", placeholder='Enter Username')
+      button.beautifulButton.floatleft(type='submit') SignIn
+      input.form-control(type='password', name="password", placeholder='Password')
+      a.floatleft(href='/')
         button.beautifulButton(type="button") Cancel
     if expressFlash
       if expressFlash.length > 0
