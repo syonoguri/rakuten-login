@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var domain = require('express-domain-middleware');
-var flash = require('express-flash');
-var app = express();
 router.use(domain);
 
 // 追記
@@ -27,7 +25,7 @@ router.get("/login", function(req,res){
   res.render("login", {user: req.user});
 });
 
-app.use(flash());
+
 
 router.post("/login", passport.authenticate("local",
   {successRedirect: "/mainApplication",
