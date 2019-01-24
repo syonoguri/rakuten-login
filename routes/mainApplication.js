@@ -13,6 +13,7 @@ console.log("mainapplication!!")
 
 router.get('/', function(req, res, next) {
     console.log(req.user)
+    if(!req.user) res.render("index");
     res.render('application', { user : req.user });
   });
 

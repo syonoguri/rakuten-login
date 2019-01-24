@@ -1,9 +1,6 @@
 extends layout
 
 block content
-    if (!user)
-        a(href="/login") Login
-        br
     if(user)
         .containerC#top
             h1#applicationTitle 楽天商品タイトル重要ワード抽出
