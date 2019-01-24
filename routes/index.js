@@ -37,7 +37,10 @@ router.post("/signUp", function(req,res){
   console.log(req.body.username);
   connection.query("insert into login set ?", {name: req.body.username, password: req.body.password}, function(error, response){
     console.log("mysqling")
-    if(error) res.render("login", {user: req.user, expressFlash: req.flash('notUniqueName')});;
+    if(error) {
+      req.flash('notUniqueName', 'そのusernameは既に使われています。');
+      res.render("login", {user: req.user, expressFlash: req.flash('notUniqueName')});
+    }
     console.log(response);
     res.render("login", {user:req.user});
   });
