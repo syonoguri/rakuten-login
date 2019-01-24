@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
 
 // 追記
 router.get("/login", function(req,res){
-  res.render("login", {user: req.user});
+  res.render("login", {user: req.user,expressFlash: req.flash('username か password が間違っています。')});
 });
 
 
@@ -39,7 +39,7 @@ router.post("/signUp", function(req,res){
     console.log("mysqling")
     if(error) throw error;
     console.log(response);
-    res.render("login", {user:req.user, expressFlash: req.flash('success')});
+    res.render("login", {user:req.user,});
   });
   
 
