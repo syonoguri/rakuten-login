@@ -22,14 +22,14 @@ form {
 input{
     box-sizing: border-box;
 }
-input[type="text"]{
+input{
     margin: auto;
     padding: 0.5em;
     width: 55%;
     font-size:16px;
 }
 
-input[type="text"]:focus{
+input:focus{
     background-color: #faf3f3;
 }
 table {
@@ -97,6 +97,7 @@ button:hover {
 }
 #form-container{
     max-width: 800px;
+    margin: auto;
 
 }
 
