@@ -96,7 +96,7 @@ keywordAnalysisController.formButton.addEventListener("click",function(e){
     if(inputedWord.length<128){
         keywordAnalysisState.makeTableCaption(inputedWord);
     }
-    req.open("POST", "http://127.0.0.1:3000/form");
+    req.open("POST", "http://127.0.0.1:3000/mainApplication");
     req.setRequestHeader("content-type","application/x-www-form-urlencoded");
     req.responseType="json";
     req.send("sentence="+inputedWord);
