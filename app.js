@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var http = require("http")
+var flash = require('connect-flash');
 
 
 // app.jsから追記したもの(ログイン実装時１)
@@ -84,7 +85,7 @@ passport.deserializeUser(function(user,done){
 });
 // 追記ここまで（ログイン実装時２）
 
-
+app.use(flash());
 app.use('/', indexRouter);
 app.use("/mainApplication", mainApplicationRouter);
 app.use('/users', usersRouter);
