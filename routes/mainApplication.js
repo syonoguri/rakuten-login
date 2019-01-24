@@ -22,7 +22,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-router.post("/form", function(req, res) {
+router.post("/", function(req, res) {
     console.log(req);
     if(req.body.sentence=="") {
         res.send(JSON.stringify("Error: 入力がありません"));
