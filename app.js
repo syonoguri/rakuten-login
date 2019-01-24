@@ -22,7 +22,7 @@ var connection = mysql.createConnection({
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var mainApplicationRouter = require('./routes/mainApplication.js')
+var mainApplicationRouter = require('./routes/mainApplication')
 
 
 var app = express();
