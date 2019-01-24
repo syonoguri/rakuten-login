@@ -112,8 +112,8 @@ button:hover {
     bottom: 0px;
     left: 0px;
     margin: auto;
-    width: auto;
-    height: auto;
+    width: max-content;
+    height: max-content
 }
 
 @media only screen and (max-width: 768px){
