@@ -2,9 +2,10 @@ extends layout
 
 block content
   if (!user)
-    a(href="/login") Login
+    a.centerParts(href="/login") Login
     br
 
   if (user)
-    p こんにちは #{user} さん
-    a(href="/logout") Logout
+    .centerParts
+      p こんにちは #{user} さん
+      a(href="/logout") Logout
