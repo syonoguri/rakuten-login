@@ -22,7 +22,7 @@ var connection = mysql.createConnection({
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var mainApplication = require("./routes/mainApplication")
+var mainApplicationRouter = require("./routes/mainApplication")
 
 
 var app = express();
@@ -86,6 +86,7 @@ passport.deserializeUser(function(user,done){
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use("/mainApplication", mainApplicationRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
