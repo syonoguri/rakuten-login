@@ -7,9 +7,7 @@ block content
     br
   #form-container
     form(role='form', action="/login",method="post", style='max-width: 300px;')
-      .form-group
-          input.form-control(type='text', name="username", placeholder='Enter Username')
-      .form-group
+        input.form-control(type='text', name="username", placeholder='Enter Username')
         input.form-control(type='password', name="password", placeholder='Password')
       button.beautifulButton(type='submit') SignIn
       a(href='/')
@@ -19,8 +17,6 @@ block content
         p <strong>エラーメッセージ:</strong> #{ expressFlash }
         
     form(role='form', action="/signUp",method="post", style='max-width: 300px;')
-      .form-group
-          input.form-control(type='text', name="username", placeholder='Enter Username')
-      .form-group
+        input.form-control(type='text', name="username", placeholder='Enter Username')
         input.form-control(type='password', name="password", placeholder='Password')
       button.beautifulButton(type='submit') SignUp

@@ -119,6 +119,11 @@ button:hover {
     width: max-content;
     height: max-content
 }
+.form-control{
+    height: 15px;
+    width: 200px;
+    padding: 5px;
+}
 
 @media only screen and (max-width: 768px){
     html{
