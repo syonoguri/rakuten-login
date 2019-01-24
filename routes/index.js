@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
 
 // 追記
 router.get("/login", function(req,res){
-  res.render("login", {user: req.user,expressFlash: req.flash('username か password が間違っています。')});
+  res.render("login", {user: req.user});
 });
 
 
