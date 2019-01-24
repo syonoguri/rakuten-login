@@ -22,7 +22,7 @@ var connection = mysql.createConnection({
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var mainApplicationRouter = require("./routes/mainApplication")
+var mainApplicationRouter = require('./routes/mainApplication.js')
 
 
 var app = express();
@@ -84,8 +84,9 @@ passport.deserializeUser(function(user,done){
 });
 // 追記ここまで（ログイン実装時２）
 
-app.use("/application", mainApplicationRouter);
+
 app.use('/', indexRouter);
+app.use("/mainApplication", mainApplicationRouter);
 app.use('/users', usersRouter);
 
 
