@@ -108,6 +108,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+req.flash('notUniqueName', 'そのusernameは既に使われています。');
+
 var server = http.createServer(app);
 server.listen(3000);
 module.exports = app;
