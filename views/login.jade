@@ -6,7 +6,7 @@ block content
     p ユーザ名とパスワードを入力してください。
     br
   #form-container
-    form(role='form', action="/login",method="post", style='max-width: 300px;')
+    form.loginform(role='form', action="/login",method="post", style='max-width: 300px;')
       input.form-control(type='text', name="username", placeholder='Enter Username')
       button.beautifulButton.floatright(type='submit') SignIn
       input.form-control(type='password', name="password", placeholder='Password')
@@ -16,7 +16,7 @@ block content
       if expressFlash.length > 0
         p <strong>エラーメッセージ:</strong> #{ expressFlash }
         
-    form(role='form', action="/signUp",method="post", style='max-width: 300px;')
+    form.loginform(role='form', action="/signUp",method="post", style='max-width: 300px;')
       input.form-control(type='text', name="username", placeholder='Enter Username')
       input.form-control(type='password', name="password", placeholder='Password')
       button.beautifulButton.floatright(type='submit') SignUp
