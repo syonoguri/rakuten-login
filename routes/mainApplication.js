@@ -1,6 +1,7 @@
 
 var express = require("express");
 var router = express.Router();
+var app = express();
 var request = require("request")
 
 var domain = require('express-domain-middleware');
@@ -8,8 +9,7 @@ router.use(domain);
 
 var yKey = process.env.NODE_YKEY;
 var rKey = process.env.NODE_RKEY;
-console.log("mainapplication!!");
-
+console.log("mainapplication!!")
 
 
 router.get('/mainApplication', function(req, res, next) {
