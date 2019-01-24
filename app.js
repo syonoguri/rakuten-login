@@ -9,9 +9,6 @@ var http = require("http")
 // app.jsから追記したもの(ログイン実装時１)
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
-
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 var session = require("express-session");
 var mysql = require("/usr/local/lib/node_modules/mysql");
 var connection = mysql.createConnection({
@@ -25,6 +22,8 @@ var connection = mysql.createConnection({
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var mainApplication = require("./routes/mainApplication")
+
 
 var app = express();
 

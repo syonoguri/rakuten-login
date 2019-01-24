@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    .containerC#top
+        h1 楽天商品タイトル重要ワード抽出
+        p 入力したキーワードにヒットする商品タイトルのうち、主要なキーワードを抽出します。
+        form(method="POST" enctype="text/plain")
+            input#inputedWord(type="text")
+            button#formButton 送信
+    .containerC#gray
+        h2#resultTitle 分析結果
+        #load
+        p#errorMessage
+    #tables.containerR
+        table#table1
+            caption#caption 検索キーワード
+            thead
+                tr
+                    th RANK
+                    th SCORE
+                    th KEYWORD
+                        form.filterForm
+                            input.filterInput#expWord
+                            button#filterButton filter
+                        button#reverseButton ↑↓
+                        button#clearFilterButton clear
+                        button#saveButton save
+            tbody#tableBody
+    
