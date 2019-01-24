@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var http = require("http")
-var flash = require('connect-flash');
+var flash = require('express-flash');
 
 
 // app.jsから追記したもの(ログイン実装時１)

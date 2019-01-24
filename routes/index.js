@@ -39,7 +39,7 @@ router.post("/signUp", function(req,res){
     console.log("mysqling")
     if(error) throw error;
     console.log(response);
-    res.render("login", {user:req.user});
+    res.render("login", {user:req.user, expressFlash: req.flash('success')});
   });
   
 
