@@ -14,7 +14,7 @@ block content
       a(href='/')
         button.btn.btn-primary(type="button") Cancel
 
-    if(expressFlash.length > 0)
+    if(failureFlash.length > 0)
        p:strong エラーメッセージ:#{ failureFlash }
         
     form(role='form', action="/signUp",method="post", style='max-width: 300px;')
