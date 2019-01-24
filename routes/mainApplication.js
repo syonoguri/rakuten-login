@@ -1,8 +1,9 @@
 
 var express = require("express");
+var router = express.Router();
 var app = express();
 var request = require("request")
-var router = express.Router();
+
 var domain = require('express-domain-middleware');
 router.use(domain);
 

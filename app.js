@@ -84,7 +84,7 @@ passport.deserializeUser(function(user,done){
 });
 // 追記ここまで（ログイン実装時２）
 
-app.use("/mainApplication", mainApplicationRouter);
+app.use("/application", mainApplicationRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
