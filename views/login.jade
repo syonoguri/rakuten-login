@@ -3,7 +3,7 @@ extends layout
 block content
   .container
     h1 Login Page
-    p.lead デモ用のログインページです
+    p ユーザ名とパスワードを入力してください。
     br
     form(role='form', action="/login",method="post", style='max-width: 300px;')
       .form-group
@@ -13,7 +13,7 @@ block content
       button.btn.btn-default(type='submit') SignIn
       a(href='/')
         button.btn.btn-primary(type="button") Cancel
-        
+
     if expressFlash.length > 0
        p <strong>エラーメッセージ:</strong> #{ expressFlash }
         
