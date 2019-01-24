@@ -5,15 +5,15 @@ block content
     h1 Login Page
     p ユーザ名とパスワードを入力してください。
     br
-  div(max-width=1000+"px")
+  #form-container
     form(role='form', action="/login",method="post", style='max-width: 300px;')
       .form-group
           input.form-control(type='text', name="username", placeholder='Enter Username')
       .form-group
         input.form-control(type='password', name="password", placeholder='Password')
-      button.btn.btn-default(type='submit') SignIn
+      button.beautifulButton(type='submit') SignIn
       a(href='/')
-        button.btn.btn-primary(type="button") Cancel
+        button.beautifulButton(type="button") Cancel
     if expressFlash
       if expressFlash.length > 0
         p <strong>エラーメッセージ:</strong> #{ expressFlash }
@@ -23,4 +23,4 @@ block content
           input.form-control(type='text', name="username", placeholder='Enter Username')
       .form-group
         input.form-control(type='password', name="password", placeholder='Password')
-      button.btn.btn-default(type='submit') SignUp
+      button.beautifulButton(type='submit') SignUp

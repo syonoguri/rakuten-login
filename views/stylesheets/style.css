@@ -87,12 +87,16 @@ button:hover {
     padding: 6px 10px;
     font-size: 18px
 }
-#saveButton, #reverseButton, #savedReverseButton, #filterButton, #savedFilterButton, #clearFiltersButton, #clearSavedFiltersButton{
+#saveButton, #reverseButton, #savedReverseButton, #filterButton, #savedFilterButton, #clearFiltersButton, #clearSavedFiltersButton, .beautifulButton{
     border: 1px solid gray;
     border-radius: 6px;
     padding: 3px 5px;
     font-size: 14px;
     margin-left: 5px;
+}
+#form-container{
+    max-width: 800px;
+
 }
 
 .filterForm {
