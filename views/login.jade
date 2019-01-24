@@ -8,15 +8,15 @@ block content
   #form-container
     form(role='form', action="/login",method="post", style='max-width: 300px;')
       input.form-control(type='text', name="username", placeholder='Enter Username')
-      button.beautifulButton.floatleft(type='submit') SignIn
+      button.beautifulButton.floatright(type='submit') SignIn
       input.form-control(type='password', name="password", placeholder='Password')
-      a.floatleft(href='/')
+      a.floatright(href='/')
         button.beautifulButton(type="button") Cancel
     if expressFlash
       if expressFlash.length > 0
         p <strong>エラーメッセージ:</strong> #{ expressFlash }
         
     form(role='form', action="/signUp",method="post", style='max-width: 300px;')
-        input.form-control(type='text', name="username", placeholder='Enter Username')
-        input.form-control(type='password', name="password", placeholder='Password')
-      button.beautifulButton(type='submit') SignUp
+      input.form-control(type='text', name="username", placeholder='Enter Username')
+      input.form-control(type='password', name="password", placeholder='Password')
+      button.beautifulButton.floatright(type='submit') SignUp
