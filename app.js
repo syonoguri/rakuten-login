@@ -64,7 +64,8 @@ passport.use(new LocalStrategy({
           return done(null, username);
         }
       }
-      return done(null, false, {message:"invalid"});
+      req.flash('failure', 'ログイン失敗、ユーザー名またはパスワードが誤りです。');
+      return done(null, false);
     // if(username === "test" && password === "test"){
     //   console.log("login!");
     //   return done(null,username)
