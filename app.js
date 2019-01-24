@@ -4,14 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var http = require("http")
-// appclientから追記したもの１
 
-
-
-
-
-
-// appclient追記ここまで
 
 // app.jsから追記したもの(ログイン実装時１)
 var passport = require("passport");
