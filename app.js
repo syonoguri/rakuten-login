@@ -7,6 +7,8 @@ var http = require("http")
 var flash = require('express-flash');
 var bcrypt = require("bcrypt")
 
+const saltRounds = 10; // ストレッチング回数
+
 // app.jsから追記したもの(ログイン実装時１)
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
