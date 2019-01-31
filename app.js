@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var http = require("http")
 var flash = require('express-flash');
-
+var bcrypt = require("bcrypt")
 
 // app.jsから追記したもの(ログイン実装時１)
 var passport = require("passport");
