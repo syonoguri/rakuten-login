@@ -40,6 +40,7 @@ router.post("/login", passport.authenticate("local",
 router.post("/signUp", function(req,res){
   console.log(req.body.username);
   var hash = bcrypt.hashSync(req.body.password, saltRounds)
+  console.log(hash);
   connection.query("insert into login set ?", {name: req.body.username, password: hash}, function(error, response){
     console.log("mysqling")
     if(error) {
