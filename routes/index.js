@@ -46,9 +46,10 @@ router.post("/signUp", function(req,res){
     if(error) {
       req.flash('notUniqueName', 'そのusernameは既に使われています。');
       res.render("login", {user: req.user, expressFlash: req.flash('notUniqueName')});
-    }
+    } else {
     console.log(response);
     res.render("login", {user:req.user});
+    }
   });
   
 
