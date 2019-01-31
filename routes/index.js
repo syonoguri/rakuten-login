@@ -1,7 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var domain = require('express-domain-middleware');
+var bcrypt = require("bcrypt");
 router.use(domain);
+
+// bcrypt設定
+const saltRounds = 10; // ストレッチング回数
 
 // 追記
 var mysql = require("/usr/local/lib/node_modules/mysql");
@@ -35,7 +39,7 @@ router.post("/login", passport.authenticate("local",
 
 router.post("/signUp", function(req,res){
   console.log(req.body.username);
-  connection.query("insert into login set ?", {name: req.body.username, password: req.body.password}, function(error, response){
+  connection.query("insert into login set ?", {name: req.body.username, password: bcrypt.hashSync(req.body.password, saltRounds)}, function(error, response){
     console.log("mysqling")
     if(error) {
       req.flash('notUniqueName', 'そのusernameは既に使われています。');
