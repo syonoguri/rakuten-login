@@ -39,7 +39,8 @@ router.post("/login", passport.authenticate("local",
 
 router.post("/signUp", function(req,res){
   console.log(req.body.username);
-  connection.query("insert into login set ?", {name: req.body.username, password: bcrypt.hashSync(req.body.password, saltRounds)}, function(error, response){
+  var hash = bcrypt.hashSync(req.body.password, saltRounds)
+  connection.query("insert into login set ?", {name: req.body.username, password: hash}, function(error, response){
     console.log("mysqling")
     if(error) {
       req.flash('notUniqueName', 'そのusernameは既に使われています。');
