@@ -61,7 +61,7 @@ passport.use(new LocalStrategy({
     connection.query("select * from login;",function(err,users){
       if(err) {return done(err);}
       for(i=0; i<users.length; i++){
-        if(users[i].name == username && users[i].password == bcrypt.hashSync(password, saltRounds)){
+        if(users[i].name == username && bcrypt.compareSync(password , users[i].password)){
           console.log("success!");
           return done(null, username);
         }
